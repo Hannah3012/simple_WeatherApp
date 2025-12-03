@@ -1,54 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="card">
-        <div class="search">
-            <input type="text" placeholder="Enter City Name" spellcheck="false">
-            <button><img src="assets/images/search.png" alt=""></button>
+      <div class="search">
+        <input type="text" placeholder="Enter City Name" spellcheck="false" />
+        <button><img src="assets/images/search.png" alt="" /></button>
+      </div>
 
-        </div>
-
-        <div class="weather">
-            <img src="assets/images/rain.png" alt="" class="weather_icon">
-            <h1 class="temp">22°C</h1>
-            <h2 class="city">Hawassa</h2>
-            <div class="details">
-                <div class="col">
-                    <img src="assets/images/humidity.png" alt="">
-                    <div>
-                        <p class="humidity">50%</p>
-                        <p>Humidity</p>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <img src="assets/images/wind.png" alt="">
-                    <div>
-                        <p class="wind">50 km/h</p>
-                        <p>Wind Speed</p>
-                    </div>
-                </div>
+      <div class="weather">
+        <img src="assets/images/rain.png" alt="" class="weather_icon" />
+        <h1 class="temp">22°C</h1>
+        <h2 class="city">Hawassa</h2>
+        <div class="details">
+          <div class="col">
+            <img src="assets/images/humidity.png" alt="" />
+            <div>
+              <p class="humidity">50%</p>
+              <p>Humidity</p>
             </div>
+          </div>
+
+          <div class="col">
+            <img src="assets/images/wind.png" alt="" />
+            <div>
+              <p class="wind">50 km/h</p>
+              <p>Wind Speed</p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <script>
-        const apiKey = "a457116fc041e64c7811b03bf9c12c88";
-        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=bangalore";
+      const apiKey = "a457116fc041e64c7811b03bf9c12c88";
+      const apiUrl =
+        "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=bangalore";
 
-        async function checkWeather() {
-            const response = await fetch(apiUrl + `&appid=${apiKey}`);
-            var data = await response.json();
+      async function checkWeather() {
+        const response = await fetch(apiUrl + `&appid=${apiKey}`);
+        var data = await response.json();
 
-            console.log(data);
+        console.log(data);
+      }
 
-        }
+      checkWeather();
     </script>
-</body>
+  </body>
 </html>
